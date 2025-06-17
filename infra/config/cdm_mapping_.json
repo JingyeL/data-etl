@@ -1,0 +1,73 @@
+{
+    "mappings": [
+      {
+        "source_field": "COR_NUMBER",
+        "cdm_field": "company_number",
+        "strategy": "copy"
+      },
+      {
+        "source_field": "COR_NAME",
+        "cdm_field": "company_name",
+        "strategy": "copy"
+      },
+      {
+        "source_field": "COR_STATUS",
+        "cdm_field": "company_status",
+        "strategy": "copy"
+      },
+      {
+        "source_field": "COR_TYPE",
+        "cdm_field": "company_type",
+        "strategy": "copy"
+      },
+      {
+        "source_field": "COR_INCORP_DATE",
+        "cdm_field": "incorporation_date",
+        "strategy": "copy"
+      },
+      {
+        "source_field": "COR_DISSOL_DATE",
+        "cdm_field": "dissolution_date",
+        "strategy": "copy"
+      },
+      {
+        "source_field": "COR_REG_URL",
+        "cdm_field": "registry_url"
+        
+      },
+      {
+        "source_field": "COR_REG_ADDRESS",
+        "cdm_field": "registered_address"
+      },
+      {
+        "source_field": "RETRIEVED_AT",
+        "cdm_field": "retrieved_at"
+      },
+      {
+        "source_field": "COR_PRINC",
+        "cdm_field": "headquarters_address",
+        "type": "nested"
+      },
+      {
+        "source_field": "COR_PRINC_*",
+        "cdm_field": "mailing_address",
+        "type": "nested"
+      },
+      {
+        "source_field": "RA_*",
+        "cdm_field": "officer",
+        "type": "nested"
+      },
+      {
+        "source_field": "PRINC{N}_*",
+        "cdm_field": "officer",
+        "type": "nested"
+      },
+      {
+        "source_field": "PRINC{N}_ADD_*",
+        "cdm_field": "officer_address",
+        "type": "nested",
+        "parent": "officer"
+      }
+    ]
+  }

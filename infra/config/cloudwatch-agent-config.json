@@ -1,0 +1,41 @@
+{
+    "agent": {
+            "metrics_collection_interval": 60,
+            "run_as_user": "cwagent",
+            "region": "eu-west-2"
+
+    },
+    "logs": {
+            "logs_collected": {
+                    "files": {
+                            "collect_list": [
+                                    {
+                                            "file_path": "/app/log*.log",
+                                            "log_group_class": "STANDARD",
+                                            "log_group_name": "ecs",
+                                            "log_stream_name": "{instance_id}",
+                                            "retention_in_days": 60
+                                    }
+                            ]
+                    }
+            }
+    },
+    "metrics": {
+    },
+    "traces": {
+            "buffer_size_mb": 3,
+            "concurrency": 8,
+            "credentials": {
+                    "role_arn": "arn:aws:iam::990229050728:role/data-pipeline-play-cloudwatch-agent-role"
+            },
+            "insecure": false,
+            "traces_collected": {
+                    "xray": {
+                            "bind_address": "127.0.0.1:2000",
+                            "tcp_proxy": {
+                                    "bind_address": "127.0.0.1:2000"
+                            }
+                    }
+            }
+    }
+}

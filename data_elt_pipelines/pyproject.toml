@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "data_elt_pipelines"
+version = "0.1.0"
+description = "data ETL Pipelines"
+authors = ["JingyeL"]
+package-mode = false
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pydantic = "^2.9.2"
+pydantic-settings = "^2.5.2"
+pytz = "^2024.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+pytz = "^2024.2"
+boto3 = "^1.35.44"
+pyspark = "^3.5.3"
+memory-profiler = "^0.61.0"
+
+
+[tool.poetry.group.db.dependencies]
+psycopg2-binary = "^2.9.10"
+
+
+[tool.poetry.group.ingest.dependencies]
+paramiko = "^3.5.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

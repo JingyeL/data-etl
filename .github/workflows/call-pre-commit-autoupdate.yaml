@@ -1,0 +1,78 @@
+name: pre-commit autoupdate
+
+permissions:
+  actions: write
+  checks: write
+  contents: write
+  deployments: write
+  id-token: write
+  issues: write
+  discussions: write
+  packages: write
+  pages: write
+  pull-requests: write
+  repository-projects: write
+  security-events: write
+  statuses: write
+
+on:
+  push:
+    branches: ['**']  # Trigger on all branches
+  pull_request:
+    branches: ['**']
+  workflow_dispatch:
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.BYPASS }}
+        
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+        
+    - name: Install pre-commit
+      run: |
+        python -m pip install --upgrade pip
+        pip install pre-commit
+        
+    - name: Install pre-commit hooks
+      run: pre-commit install
+      
+    - name: Run pre-commit on all files
+      run: pre-commit run --all-files
+      
+    - name: Auto-update pre-commit hooks
+      run: pre-commit autoupdate
+      
+    - name: Import GPG key
+      if: github.event_name == 'push'
+      run: |
+        echo "${{ secrets.PIPELINE_GPG_KEY }}" | gpg --import --batch
+        echo "${{ secrets.PIPELINE_GPG_PASSPHRASE }}" | gpg --batch --yes --passphrase-fd 0 --pinentry-mode loopback --sign-key "$(gpg --list-secret-keys --keyid-format LONG | grep sec | awk '{print $2}' | cut -d'/' -f2)"
+        
+    - name: Configure Git
+      if: github.event_name == 'push'
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git config --global user.signingkey "$(gpg --list-secret-keys --keyid-format LONG | grep sec | awk '{print $2}' | cut -d'/' -f2)"
+        git config --global commit.gpgsign true
+        
+    - name: Commit and push changes
+      if: github.event_name == 'push'
+      run: |
+        git add -A
+        if ! git diff --cached --quiet; then
+          git commit -S -m "chore: auto-update pre-commit hooks"
+          git push
+        else
+          echo "No changes to commit"
+        fi

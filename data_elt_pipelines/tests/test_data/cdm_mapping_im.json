@@ -1,0 +1,140 @@
+{
+    "meta_data": {
+        "file_name": "cdm_mapping_im",
+        "version": "0.1",
+        "last_update": "2024-10-11",
+        "type": "cdm_mapping"
+    },
+    "rules": {
+        "company_number": {
+            "source_field": "Number",
+            "cdm_field": "company_number"
+        },
+        "name": {
+            "source_field": "Name",
+            "cdm_field": "name"
+        },
+        "jurisdiction_code": {
+            "literal_value": "im",
+            "cdm_field": "jurisdiction_code",
+            "strategy": "literal"
+        },
+        "current_status": {
+            "source_field": "Status",
+            "cdm_field": "current_status"
+        },
+        "company_type": {
+            "source_field": "Company Type",
+            "cdm_field": "company_type"
+        },
+        "incorporation_dates": {
+            "cdm_field": "incorporation_date",
+            "value_type": "dict",
+            "strategy": "add"
+        },
+        "date_of_incorporation": {
+            "source_field": "Date of Incorporation",
+            "cdm_parent": "incorporation_date",
+            "cdm_field": "date_of_incorporation",
+            "value_type": "date",
+            "date_format": "DD Mon YYYY",
+            "strategy": "add"
+        },
+        "date_of_organisation": {
+            "source_field": "Date of Organisation",
+            "cdm_parent": "incorporation_date",
+            "cdm_field": "date_of_organisation",
+            "value_type": "date",
+            "date_format": "DD Mon YYYY",
+            "strategy": "add"
+        },
+        "date_of_registration": {
+            "source_field": "Date of Registration",
+            "cdm_parent": "incorporation_date",
+            "cdm_field": "date_of_registration",
+            "value_type": "date",
+            "date_format": "DD Mon YYYY",
+            "strategy": "add"
+        },
+        "officers": {
+            "source_field": "Registered Agents",
+            "cdm_field": "officers",
+            "value_type": "list"
+        },
+        "dissolution_date": {
+            "cdm_field": "dissolution_date",
+            "value_type": "dict",
+            "strategy": "add"
+        },
+        "cease_date_or_removed_date": {
+            "source_field": "Ceased Date or Removed Date",
+            "cdm_parent": "dissolution_date",
+            "cdm_field": "cease_date_or_removed_date"
+        },
+        "dissolved_date_or_struck_off_date": {
+            "source_field": "Dissolved Date or Struck Off Date",
+            "cdm_parent": "dissolution_date",
+            "cdm_field": "dissolved_date_or_struck_off_date"
+        },
+        "ceased_date": {
+            "source_field": "Ceased Date",
+            "cdm_parent": "dissolution_date",
+            "cdm_field": "ceased_date"
+        },
+        "removed_date": {
+            "source_field": "Removed Date",
+            "cdm_parent": "dissolution_date",
+            "cdm_field": "removed_date"
+        },
+        "registered_address": {
+            "cdm_field": "registered_address",
+            "value_type": "dict",
+            "strategy": "add"
+        },
+        "registered_office_address": {
+            "source_field": "Registered Office Address",
+            "cdm_parent": "registered_address",
+            "cdm_field": "registered_office_address"
+        },
+        "place_of_business": {
+            "source_field": "Place of Business",
+            "cdm_parent": "registered_address",
+            "cdm_field": "place_of_business"
+        },
+        "all_attributes": {
+            "cdm_field": "all_attributes",
+            "value_type": "dict",
+            "strategy": "add"
+        },
+        "presence_of_charges": {
+            "source_field": "Presence of Charges",
+            "cdm_parent": "all_attributes",
+            "cdm_field": "presence_of_charges"
+        },
+        "is_in_liquidation": {
+            "source_field": "Is in Liquidation?",
+            "cdm_parent": "all_attributes",
+            "cdm_field": "is_in_liquidation"
+        },
+        "receivers_appointed": {
+            "source_field": "Receiver(s) Appointed?",
+            "cdm_parent": "all_attributes",
+            "cdm_field": "receivers_appointed"
+        },
+        "documents": {
+            "source_field": "Documents",
+            "cdm_parent": "all_attributes",
+            "cdm_field": "documents"
+        },
+        "registry_type": {
+            "source_field": "Registry Type",
+            "cdm_parent": "all_attributes",
+            "cdm_field": "registry_type"
+        },
+        "previous_names": {
+            "source_field": "Previous Names",
+            "cdm_field": "previous_names",
+            "value_type": "list"
+        }
+    }
+}

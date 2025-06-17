@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "data_elt_pipelines"
+version = "0.1.0"
+description = "My Data ETL Pipelines"
+authors = ["JingyeL"]
+package-mode = false
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pydantic = "^2.9.2"
+pydantic-settings = "^2.5.2"
+pytz = "^2024.2"
+aws-psycopg2 = "^1.3.8"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+boto3 = "^1.35.34"
+pytz = "^2024.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

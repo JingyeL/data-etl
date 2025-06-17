@@ -1,0 +1,194 @@
+[
+    {
+       "company_number":"L24000407310",
+       "name":"249 PLEX LLC",
+       "jurisdiction_code":"us_fl",
+       "current_status":"None",
+       "company_type":"None",
+       "incorporation_date":"None",
+       "dissolution_date":"None",
+       "registry_url":"None",
+       "officers":{
+          "RA_":{
+             "name":"SANCHEZ             ELKIN         D",
+             "position":"None",
+             "other_attributes":{
+                "type":"P"
+             },
+             "street_address":"20861 JOHNSON STREET",
+             "city":"PEMBROKE PINES",
+             "state":"FL",
+             "zip5":"33029",
+             "zip4":""
+          },
+          "1":{
+             "name":"SANCHEZ             ELKIN         D",
+             "street_address":"20861 JOHNSON STREET #103",
+             "city":"PEMBROKE PINES",
+             "state":"FL",
+             "zip5":"33029",
+             "zip4":""
+          },
+          "2":{
+             "name":"",
+             "street_address":"",
+             "city":"",
+             "state":"",
+             "zip5":"",
+             "zip4":""
+          },
+          "3":{
+             "name":"",
+             "street_address":"",
+             "city":"",
+             "state":"",
+             "zip5":"",
+             "zip4":""
+          },
+          "4":{
+             "name":"",
+             "street_address":"",
+             "city":"",
+             "state":"",
+             "zip5":"",
+             "zip4":""
+          },
+          "5":{
+             "name":"",
+             "street_address":"",
+             "city":"",
+             "state":"",
+             "zip5":"",
+             "zip4":""
+          },
+          "6":{
+             "name":"",
+             "street_address":"",
+             "city":"",
+             "state":"",
+             "zip5":"",
+             "zip4":""
+          }
+       },
+       "registered_address":"None",
+       "mailing_address":{
+          "COR_MAIL":{
+             "street_address_1":"20861 JOHNSON STREET",
+             "street_address_2":"SUITE 103"
+          }
+       },
+       "headquarters_address":{
+          "COR_PRINC":{
+             "street_address_1":"20861 JOHNSON STREET",
+             "street_address_2":"SUITE 103",
+             "city":"PEMBROKE PINES",
+             "state":"FL"
+          }
+       },
+       "company_identifier":"None",
+       "all_attributes":"None",
+       "previous_names":"None",
+       "fetched_by":"None",
+       "fetched_at":"None",
+       "parsed_by":"None",
+       "parsed_at":"None",
+       "cdm_mapping_rules":"None",
+       "cdm_mapped_at":"None"
+    },
+    {
+       "company_number":"L24000407320",
+       "name":"LTE SUPPLIER LLC",
+       "jurisdiction_code":"us_fl",
+       "current_status":"None",
+       "company_type":"None",
+       "incorporation_date":"None",
+       "dissolution_date":"None",
+       "registry_url":"None",
+       "officers":{
+          "RA_":{
+             "name":"KOLOBOV             KIRILL",
+             "position":"None",
+             "other_attributes":{
+                "type":"P"
+             },
+             "street_address":"2613 MARATHON LN",
+             "city":"FORT LAUDERDALE",
+             "state":"FL",
+             "zip5":"33312",
+             "zip4":""
+          },
+          "1":{
+             "name":"KOLOBOV             KIRILL",
+             "street_address":"2613 MARATHON LN",
+             "city":"FORT LAUDERDALE",
+             "state":"FL",
+             "zip5":"33312",
+             "zip4":""
+          },
+          "2":{
+             "name":"",
+             "street_address":"",
+             "city":"",
+             "state":"",
+             "zip5":"",
+             "zip4":""
+          },
+          "3":{
+             "name":"",
+             "street_address":"",
+             "city":"",
+             "state":"",
+             "zip5":"",
+             "zip4":""
+          },
+          "4":{
+             "name":"",
+             "street_address":"",
+             "city":"",
+             "state":"",
+             "zip5":"",
+             "zip4":""
+          },
+          "5":{
+             "name":"",
+             "street_address":"",
+             "city":"",
+             "state":"",
+             "zip5":"",
+             "zip4":""
+          },
+          "6":{
+             "name":"",
+             "street_address":"",
+             "city":"",
+             "state":"",
+             "zip5":"",
+             "zip4":""
+          }
+       },
+       "registered_address":"None",
+       "mailing_address":{
+          "COR_MAIL":{
+             "street_address_1":"2613 MARATHON LN",
+             "street_address_2":""
+          }
+       },
+       "headquarters_address":{
+          "COR_PRINC":{
+             "street_address_1":"2613 MARATHON LN",
+             "street_address_2":"",
+             "city":"FORT LAUDERDALE",
+             "state":"FL"
+          }
+       },
+       "company_identifier":"None",
+       "all_attributes":"None",
+       "previous_names":"None",
+       "fetched_by":"None",
+       "fetched_at":"None",
+       "parsed_by":"None",
+       "parsed_at":"None",
+       "cdm_mapping_rules":"None",
+       "cdm_mapped_at":"None"
+    }
+ ]

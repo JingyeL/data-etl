@@ -1,0 +1,7 @@
+{
+        "us_fl": {
+                "secret_name": "poc/data/sftp/us_fl",
+                "source_path": "doc/cor",
+                "target_path": "us_fl"
+        }
+}

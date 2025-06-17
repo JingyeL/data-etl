@@ -1,0 +1,331 @@
+{
+	"meta_data": {
+		"file_name": "cdm_mapping_us_fl",
+		"version": "0.1",
+		"last_update": "2024-10-07",
+		"type": "cdm_mapping"
+	},
+	"rules": {
+		"company_number": {
+			"source_field": "COR_NUMBER",
+			"cdm_field": "company_number"
+		},
+		"name": {
+			"source_field": "COR_NAME",
+			"cdm_field": "name"
+		},
+		"jurisdiction_code": {
+			"literal_value": "us_fl",
+			"cdm_field": "jurisdiction_code",
+			"strategy": "literal"
+		},
+		"current_status": {
+			"source_field": "COR_STATUS",
+			"cdm_field": "current_status"
+		},
+		"incorporation_dates": {
+			"cdm_field": "incorporation_date",
+			"value_type": "dict",
+			"strategy": "add"
+		},
+		"cor_file_date": {
+			"cdm_parent": "incorporation_date",
+			"source_field": "COR_FILE_DATE",
+			"cdm_field": "file_date",
+			"value_type": "date",
+			"date_format": "MMDDYYYY",
+			"python_date_format": "%m%d%Y",
+			"strategy": "add"
+		},
+		"officers": {
+			"cdm_field": "officers",
+			"value_type": "dict",
+			"strategy": "add"
+		},
+		"ra_name": {
+			"source_field": "RA_NAME",
+			"cdm_parent": "officers",
+			"cdm_field": "name",
+			"pattern_group": "RA_",
+			"pattern": "(RA_)NAME",
+			"strategy": "regex"
+		},
+		"ra_position": {
+			"literal_value": "agent",
+			"cdm_parent": "officers",
+			"cdm_field": "position",
+			"strategy": "literal",
+			"pattern_group": "RA_"
+		},
+		"other_attributes": {
+			"cdm_field": "other_attributes",
+			"cdm_parent": "officers",
+			"value_type": "dict",
+			"strategy": "find_regex_parent",
+			"pattern_group": "RA_"
+		},
+		"ra_name_type": {
+			"source_field": "RA_NAME_TYPE",
+			"cdm_parent": "other_attributes",
+			"strategy": "find_regex_parent",
+			"cdm_field": "type",
+			"pattern_group": "RA_"
+		},
+		"ra_add_1": {
+			"source_field": "RA_ADD_1",
+			"cdm_parent": "officers",
+			"cdm_field": "street_address",
+			"pattern_group": "RA_",
+			"pattern": "(RA_)ADD_1",
+			"strategy": "regex"
+		},
+		"ra_city": {
+			"source_field": "RA_CITY",
+			"cdm_parent": "officers",
+			"cdm_field": "city",
+			"pattern_group": "RA_",
+			"pattern": "(RA_)CITY",
+			"strategy": "regex"
+		},
+		"ra_state": {
+			"source_field": "RA_STATE",
+			"cdm_parent": "officers",
+			"cdm_field": "state",
+			"pattern_group": "RA_",
+			"pattern": "(RA_)STATE",
+			"strategy": "regex"
+		},
+		"ra_zip5": {
+			"source_field": "RA_ZIP5",
+			"cdm_parent": "officers",
+			"cdm_field": "zip5",
+			"strategy": "regex",
+			"pattern_group": "RA_",
+			"pattern": "(RA_)ZIP5"
+		},
+		"ra_zip4": {
+			"source_field": "RA_ZIP4",
+			"cdm_parent": "officers",
+			"cdm_field": "zip4",
+			"pattern_group": "RA_",
+			"pattern": "(RA_)ZIP4",
+			"strategy": "regex"
+		},
+		"princ_name": {
+			"source_field": "PRINC(\\d)_NAME",
+			"cdm_parent": "officers",
+			"cdm_field": "name",
+			"strategy": "regex",
+			"pattern_group": 1,
+			"pattern": "PRINC(\\d)_NAME"
+		},
+		"princ_title": {
+			"source_field": "PRINC(\\d)_TITLE",
+			"cdm_parent": "officers",
+			"cdm_field": "position",
+			"strategy": "regex",
+			"pattern_group": 1,
+			"pattern": "PRINC(\\d)_TITLE"
+		},
+		"other_attributes_2": {
+			"cdm_field": "other_attributes",
+			"cdm_parent": "officers",
+			"value_type": "dict",
+			"strategy": "find_regex_parent",
+			"pattern_group": 1
+		},
+		"princ_type": {
+			"source_field": "PRINC(\\d)_TYPE",
+			"cdm_parent": "other_attributes",
+			"cdm_field": "type",
+			"strategy": "regex",
+			"pattern_group": 1,
+			"pattern": "PRINC(\\d)_TYPE"
+		},
+		"princ_street_address": {
+			"source_field": "PRINC(\\d)_ADD_1",
+			"cdm_parent": "officers",
+			"cdm_field": "street_address",
+			"strategy": "regex",
+			"pattern_group": 1,
+			"pattern": "PRINC(\\d)_ADD_1"
+		},
+		"princ_city": {
+			"source_field": "PRINC(\\d)_CITY",
+			"cdm_parent": "officers",
+			"cdm_field": "city",
+			"strategy": "regex",
+			"pattern_group": 1,
+			"pattern": "PRINC(\\d)_CITY"
+		},
+		"princ_state": {
+			"source_field": "PRINC(\\d)_STATE",
+			"cdm_parent": "officers",
+			"cdm_field": "state",
+			"strategy": "regex",
+			"pattern_group": 1,
+			"pattern": "PRINC(\\d)_STATE"
+		},
+		"princ_zip5": {
+			"source_field": "PRINC(\\d)_ZIP5",
+			"cdm_parent": "officers",
+			"cdm_field": "zip5",
+			"strategy": "regex",
+			"pattern_group": 1,
+			"pattern": "PRINC(\\d)_ZIP5"
+		},
+		"princ_zip4": {
+			"source_field": "PRINC(\\d)_ZIP4",
+			"cdm_parent": "officers",
+			"cdm_field": "zip4",
+			"strategy": "regex",
+			"pattern_group": 1,
+			"pattern": "PRINC(\\d)_ZIP4"
+		},
+		"registered_address": {
+			"source_field": "COR_REG_ADDRESS",
+			"cdm_field": "registered_address"
+		},
+		"mailing_address": {
+			"cdm_field": "mailing_address",
+			"value_type": "dict",
+			"strategy": "add"
+		},
+		"cor_mail_add_1": {
+			"source_field": "(COR_MAIL_)ADD_1",
+			"cdm_parent": "mailing_address",
+			"cdm_field": "street_address_1",
+			"strategy": "regex",
+			"pattern_group": 1,
+			"pattern": "(COR_MAIL)_ADD_1"
+		},
+		"cor_mail_add_2": {
+			"source_field": "(COR_MAIL_)ADD_2",
+			"cdm_parent": "mailing_address",
+			"cdm_field": "street_address_2",
+			"strategy": "regex",
+			"pattern_group": 1,
+			"pattern": "(COR_MAIL)_ADD_2"
+		},
+		"cor_mail_city": {
+			"source_field": "COR_MAIL_CITY",
+			"cdm_parent": "mailing_address",
+			"cdm_field": "locality",
+			"strategy": "regex",
+			"pattern_group": 1,
+			"pattern": "(COR_MAIL)_CITY"
+		},
+		"cor_mail_state": {
+			"source_field": "COR_MAIL_STATE",
+			"cdm_parent": "mailing_address",
+			"cdm_field": "region",
+			"strategy": "regex",
+			"pattern_group": 1,
+			"pattern": "(COR_MAIL)_STATE"
+		},
+		"cor_mail_zip5": {
+			"source_field": "COR_MAIL_ZIP5",
+			"cdm_parent": "mailing_address",
+			"cdm_field": "zip5",
+			"strategy": "regex",
+			"pattern_group": 1,
+			"pattern": "(COR_MAIL)_ZIP5"
+		},
+		"cor_mail_zip4": {
+			"source_field": "COR_MAIL_ZIP4",
+			"cdm_parent": "mailing_address",
+			"cdm_field": "zip4",
+			"strategy": "regex",
+			"pattern_group": 1,
+			"pattern": "(COR_MAIL)_ZIP4"
+		},
+		"headquarters_address": {
+			"cdm_field": "headquarters_address",
+			"value_type": "dict",
+			"strategy": "add"
+		},
+		"cor_princ_add_1": {
+			"source_field": "(COR_PRINC_)ADD_1",
+			"cdm_parent": "headquarters_address",
+			"cdm_field": "street_address_1",
+			"strategy": "regex",
+			"pattern_group": 1,
+			"pattern": "(COR_PRINC)_ADD_1"
+		},
+		"cor_princ_add_2": {
+			"source_field": "(COR_PRINC_)ADD_2",
+			"cdm_parent": "headquarters_address",
+			"cdm_field": "street_address_2",
+			"strategy": "regex",
+			"pattern_group": 1,
+			"pattern": "(COR_PRINC)_ADD_2"
+		},
+		"cor_princ_city": {
+			"source_field": "(COR_PRINC_)CITY",
+			"cdm_parent": "headquarters_address",
+			"cdm_field": "locality",
+			"strategy": "regex",
+			"pattern_group": 1,
+			"pattern": "(COR_PRINC)_CITY"
+		},
+		"cor_princ_state": {
+			"source_field": "(COR_PRINC_)STATE",
+			"cdm_parent": "headquarters_address",
+			"cdm_field": "region",
+			"strategy": "regex",
+			"pattern_group": 1,
+			"pattern": "(COR_PRINC)_STATE"
+		},
+		"cor_princ_zip5": {
+			"source_field": "(COR_PRINC_)ZIP5",
+			"cdm_parent": "headquarters_address",
+			"cdm_field": "zip5",
+			"strategy": "regex",
+			"pattern_group": 1,
+			"pattern": "(COR_PRINC)_ZIP5"
+		},
+		"cor_princ_zip4": {
+			"source_field": "(COR_PRINC_)ZIP4",
+			"cdm_parent": "headquarters_address",
+			"cdm_field": "zip4",
+			"strategy": "regex",
+			"pattern_group": 1,
+			"pattern": "(COR_PRINC)_ZIP4"
+		},
+		"all_attributes": {
+			"cdm_field": "all_attributes",
+			"value_type": "dict",
+			"strategy": "add"
+		},
+		"jurisdiction_of_origin": {
+			"source_field": "STATE_COUNTRY",
+			"cdm_parent": "all_attributes",
+			"cdm_field": "jurisdiction_of_origin"
+		},
+		"company_identifiers": {
+			"cdm_field": "company_identifiers",
+			"value_type": "dict",
+			"strategy": "add"
+		},
+		"company_type": {
+			"cdm_field": "company_type",
+			"source_field": "COR_FILING_TYPE"
+		},
+
+		"company_identifier_uid": {
+			"source_field": "COR_FEI_NUMBER",
+			"cdm_parent": "company_identifiers",
+			"cdm_field": "uid"
+		},
+		"identifier_system_code": {
+			"literal_value": "us_fein",
+			"cdm_parent": "all_attributes",
+			"cdm_field": "identifier_system_code",
+			"strategy": "literal"
+		},
+		"hash": {
+			"source_field": "hash",
+			"cdm_field": "hash"
+		}
+	}
+}

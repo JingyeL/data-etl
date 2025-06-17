@@ -1,0 +1,19 @@
+from botocore.config import Config
+
+ISO8901_FORMAT = "%Y-%m-%dT%H:%M:%S"
+ISO8901_FORMAT_TZ = "%Y-%m-%dT%H:%M:%Sz"
+SFTP_CONFIG_OBJECT_KEY = "source_ingestion/ingestion_meta_data.json"
+MULTI_PART_FILE_CHUNK_SIZE = 10 * 1024 * 1024  # 10 MB
+MAXIMUM_FILE_SIZE_UNCOMPRESS = 100 * 1024 * 1024  # 100 MB
+MAXIMUM_FILE_SIZE_COMPRESSED = 10 * 1024 * 1024  # 10 MB for compressed file
+MAXIMUM_DATA_SIZE_LAMBDA = 1 * 1024 * 1024 * 1024  # 1GB
+DEFAULT_REGION = "eu-west-2"
+DEFAULT_MAX_DATA_CHUNK_SIZE = 20000
+DEFAULT_DATA_CHUNK_SIZE = 2500
+DEFAULT_GLUE_CAPACITY_DPU = 2
+GLUE_JOB_TIMEOUT_MINUTES = 120
+GLUE_JOB_MAX_RETRIES = 0
+
+S3_CONNECTION_POOL_CONFIG = Config(
+    retries={"max_attempts": 10, "mode": "standard"}, max_pool_connections=50
+)

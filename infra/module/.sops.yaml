@@ -1,0 +1,7 @@
+creation_rules:
+  - kms: "arn:aws:kms:eu-west-2:588738598622:alias/sops"
+    encrypted_regex: '^(password|secret|key)$'
+    path_regex: '.*\.json$'
+  - kms: "arn:aws:kms:eu-west-2:990229050728:alias/sops-key"
+    encrypted_regex: '^(password|secret|key)$'
+    path_regex: '.*\.json$'
