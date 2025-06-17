@@ -162,7 +162,7 @@ Handles compression and decompression of archive files.
 }
 ```
 
-### `backfill_file_meta_handler`
+#### `backfill_file_meta_handler`
 Backfills metadata for files in the raw data bucket, ensuring all files have the necessary metadata for processing.
 **Test Case:**
 ```json
@@ -174,7 +174,7 @@ Backfills metadata for files in the raw data bucket, ensuring all files have the
   "payload": "{\"bucket\": \"jingyel-data-etl-raw\", \"jurisdiction\": \"us_fl\"}"
 }
 ```
-### `csv_chunking_handler`
+#### `csv_chunking_handler`
 Splits large CSV files into smaller chunks for easier processing and loading.
 **Features:**
 - Reads CSV files from S3 and preserves original metadata
@@ -210,7 +210,7 @@ For an input file `us_fl_source.csv`, the handler generates:
 - `us_fl_source_5000.csv` (first 5,000 rows)
 
 
-### `ecs_wrapper`
+#### `ecs_wrapper`
 A wrapper script that enables Lambda functions to run as ECS Fargate tasks. This allows for processing of large datasets that exceed Lambda's memory and execution time limits.
 
 **Purpose:**
