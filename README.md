@@ -13,7 +13,7 @@ The pipeline consists of multiple AWS Lambda functions, ECS tasks, and AWS Glue 
 
 ![Data ETL Architecture data warehouse and data lake](data_etl_arch.png) 
 
-![Data warehouse loading and modelling](data_etl_datawarehouse.png) 
+<img src="data_etl_datawarehouse.png" alt="Data warehouse" width="600">
 
 The pipeline also includes:
 - CloudWatch logging for all Lambda functions
